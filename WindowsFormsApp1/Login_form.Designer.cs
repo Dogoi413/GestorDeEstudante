@@ -68,6 +68,7 @@
             this.Login.TabIndex = 3;
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = true;
+            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // Cancelar
             // 
@@ -78,6 +79,7 @@
             this.Cancelar.TabIndex = 4;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = true;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // label2
             // 
