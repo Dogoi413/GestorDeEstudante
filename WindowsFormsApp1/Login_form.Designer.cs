@@ -114,6 +114,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(121, 20);
             this.textBox3.TabIndex = 8;
+            this.textBox3.UseSystemPasswordChar = true;
             // 
             // Login_form
             // 

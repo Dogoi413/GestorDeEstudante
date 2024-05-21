@@ -34,7 +34,22 @@ namespace WindowsFormsApp1
 
             MySqlDataAdapter meuAdaptadorSql = new MySqlDataAdapter();
             DataTable minhaTabela = new DataTable(); 
-            MySqlCommand meuComandoSql = new MySqlCommand("", meuBancoDeDados.getConexao);
+            MySqlCommand meuComandoSql = new MySqlCommand("SELECT * FROM `usuarios` WHERE `nome_de_usuario` = @usuario and `senha` = @senha", meuBancoDeDados.getConexao);
+            meuComandoSql.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = textBox2.Text;
+            meuComandoSql.Parameters.Add("@senha", MySqlDbType.VarChar).Value = textBox3.Text;
+
+            meuAdaptadorSql.SelectCommand = meuComandoSql;
+
+            meuAdaptadorSql.Fill(minhaTabela);
+
+            if (minhaTabela.Rows.Count > 0)
+            {
+                MessageBox.Show("existem dados");
+            }
+            else
+            {
+                MessageBox.Show("usuario ou senha incorretos", "erro de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
